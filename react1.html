@@ -1,0 +1,18 @@
+import React from "react";
+
+function Welcome(props) {
+  return (
+    <div style={{textAlign: "center"}}>
+      <h1>Hello, {props.name}</h1>
+      <h2>City: {props.city}</h2>
+      <p>Welcome to my React Application.</p>
+    </div>
+  );
+}
+
+function App() {
+  return <Welcome name="Sreehitha" city="Chennai" />;
+}
+
+export default App;
+
