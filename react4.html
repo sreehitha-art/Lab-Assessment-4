@@ -1,0 +1,31 @@
+import React, { useState } from "react";
+
+function App() {
+  const [m1, setM1] = useState("");
+  const [m2, setM2] = useState("");
+  const [m3, setM3] = useState("");
+  const [grade, setGrade] = useState("");
+
+  const calculate = () => {
+    let avg = (Number(m1)+Number(m2)+Number(m3))/3;
+
+    if(avg >= 90) setGrade("A");
+    else if(avg >= 75) setGrade("B");
+    else if(avg >= 50) setGrade("C");
+    else setGrade("Fail");
+  };
+
+  return (
+    <div style={{textAlign:"center"}}>
+      <input onChange={(e)=>setM1(e.target.value)} placeholder="Mark1"/>
+      <input onChange={(e)=>setM2(e.target.value)} placeholder="Mark2"/>
+      <input onChange={(e)=>setM3(e.target.value)} placeholder="Mark3"/>
+
+      <br/><br/>
+      <button onClick={calculate}>Calculate</button>
+      <h2>Grade: {grade}</h2>
+    </div>
+  );
+}
+
+export default App;
