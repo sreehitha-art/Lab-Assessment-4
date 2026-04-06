@@ -1,0 +1,34 @@
+
+import React, { useState } from "react";
+
+function App() {
+  const [books, setBooks] = useState([]);
+
+  const search = () => {
+    // Dummy books
+    setBooks([
+      { title: "React Basics", author: "John" },
+      { title: "Web Programming", author: "Smith" }
+    ]);
+  };
+
+  return (
+    <div style={{textAlign:"center"}}>
+      <h1>Book Explorer</h1>
+      <button onClick={search}>Search Books</button>
+
+      {books.map((b,i)=>(
+        <div key={i}>
+          <h3>{b.title}</h3>
+          <p>{b.author}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
