@@ -1,0 +1,29 @@
+import React, { useState } from "react";
+
+function App() {
+  const images = [
+    "https://via.placeholder.com/150",
+    "https://via.placeholder.com/160",
+    "https://via.placeholder.com/170"
+  ];
+
+  const [selected, setSelected] = useState(images[0]);
+
+  return (
+    <div style={{textAlign:"center"}}>
+      <img src={selected} width="300" alt="preview"/>
+
+      <div>
+        {images.map((img, i) => (
+          <img key={i} src={img} width="100"
+            onClick={()=>setSelected(img)}
+            style={{margin:"10px", cursor:"pointer"}}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
