@@ -1,0 +1,34 @@
+
+
+import React, { useState } from "react";
+
+function App() {
+  const [countries, setCountries] = useState([]);
+
+  const search = () => {
+    setCountries([
+      { name: "India", capital: "New Delhi", population: "1.4B" },
+      { name: "USA", capital: "Washington", population: "331M" }
+    ]);
+  };
+
+  return (
+    <div style={{textAlign:"center"}}>
+      <h1>Country Explorer</h1>
+      <button onClick={search}>Show Countries</button>
+
+      {countries.map((c,i)=>(
+        <div key={i}>
+          <h3>{c.name}</h3>
+          <p>Capital: {c.capital}</p>
+          <p>Population: {c.population}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
+
+
+
